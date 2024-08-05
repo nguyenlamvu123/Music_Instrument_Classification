@@ -1,3 +1,6 @@
+debug: bool = True
+
+
 class CreateDataset:
     # Name of dataset csv
     Name = 'dataset.csv'
@@ -91,4 +94,3 @@ class Test_path:
 class Model:
     # Name of Model
     NAME = 'model.pkl'
-

@@ -6,7 +6,7 @@ import librosa
 from sklearn import svm
 import joblib
 
-from config import Model, CreateDataset
+from config import Model, CreateDataset, debug
 
 def main():
     # Load data
@@ -18,6 +18,8 @@ def main():
     # Get X and Y
     x = data_set[:, :col-1]
     y = data_set[:, col-1]
+    if debug:
+        print('######', y)
 
     clf = svm.SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
                   decision_function_shape='ovr', degree=3, gamma=0.02, kernel='linear',
