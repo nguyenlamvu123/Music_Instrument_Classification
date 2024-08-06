@@ -17,11 +17,11 @@ def get_sampels(data_set='train'):
     audios = []
     labels = []
     path_of_audios = librosa.util.find_files(data_path + data_set)
-    for audio in tqdm(path_of_audios):
+    for audio in path_of_audios:
         labels.append(audio.split(os.sep)[-1].split('_')[0])
-        y, sr = librosa.load(audio, sr=22050, duration=4.0)
-        audios.append(y)
-        # audios.append(audio)
+        # y, sr = librosa.load(audio, sr=22050, duration=4.0)
+        # audios.append(y)
+        audios.append(audio)
     audios_numpy = np.array(audios)
     return audios_numpy, labels
 
