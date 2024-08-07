@@ -1,11 +1,32 @@
 import joblib, os, sklearn, librosa
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import numpy as np
 
 from feature_engineering import *
 from config import *
 
+
+def Evaluate_model(y_true, y_pred):
+    # site: https://machinelearningcoban.com/2017/08/31/evaluation/
+    labels = np.array(y_true)
+    print('test accuracy = ', accuracy_score(labels, y_pred), ' %')
+
+    print(classification_report(labels, y_pred))
+
+    cnf_matrix = confusion_matrix(labels, y_pred)
+    print('Confusion matrix:\n', cnf_matrix)
+    print('\nAccuracy:', np.diagonal(cnf_matrix).sum() / cnf_matrix.sum())
+
+
+def draw3Dplotfor3feat():
+    # https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html#sphx-glr-auto-examples-svm-plot-iris-svc-py
+    pass  # https://stackoverflow.com/questions/51495819/how-to-plot-svm-decision-boundary-in-sklearn-python
+
+
 def main(PATH=None) -> dict or None :
+    testflag: bool = False
     if PATH is None:  # run test
+        testflag = not testflag
         PATH = librosa.util.find_files(Test_path.data_path)
     labels = []
     samples = []
@@ -23,9 +44,8 @@ def main(PATH=None) -> dict or None :
     test_Y_hat = clf.predict(data)
 
     jso = None
-    if PATH is None:  # run test
-        accuracy = np.sum((test_Y_hat == labels)) / 200.0 * 100.0
-        print('test accuracy = ' + str(accuracy) + ' %')
+    if testflag:  # run test
+        Evaluate_model(labels, test_Y_hat)
     else:  # method is calles from gradio
         result = list(test_Y_hat)
         jso: dict or None = dict()

@@ -42,6 +42,11 @@ def main(audios_numpy, labels):
         piece = audios_numpy[n_batches * batch_size:]
         remaining_y = labels[n_batches * batch_size:]
         if len(set(remaining_y)) > 1:
-            remaining_X = readdata(piece)
+            remaining_X = readdata(piece)  # for audio in tqdm(piece):
+
+            dataset_pandas = pd.DataFrame(remaining_X)
+            dataset_pandas["instruments"] = remaining_y
+            dataset_pandas.to_csv(csv_name, mode='a', index=False, header=False)
+
             linear_svm.fit(remaining_X, remaining_y)
             joblib.dump(linear_svm, Model.NAME)
