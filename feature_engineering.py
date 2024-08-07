@@ -2,7 +2,7 @@ import librosa
 import numpy as np
 from tqdm import tqdm
 from sklearn import preprocessing
-from config import CreateDataset, sr
+from config import CreateDataset
 
 sr = CreateDataset.sr
 fs = CreateDataset.fs
