@@ -69,6 +69,6 @@ def run(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
 
 
 if __name__ == '__main__':
-    run(C=10, gamma=1, )  # 0.17578125 (0.262939453125) - linear  # 0.208740234375 - rbf (but be very bad)
-    # run(C=20, gamma=0.1, )  # 0.174560546875 - linear  # 0.20068359375 - rbf (but be bad)
-    # run(C=1000, gamma=1, )  # 0.20751953125 - rbf (but be bad)
+    # run(C=10, gamma=0.1, )  # 0.262939453125
+    # run(C=20, gamma=0.1, )  #
+    run(C=1000, gamma=1, )  #

@@ -38,7 +38,7 @@ def main(PATH=None, testflag: bool = False, clf=None) -> dict or None :
     data = np.array([extract_feature(sample) for sample in samples])
     data = scaler.fit_transform(data)
 
-    if clf is None: clf = joblib.load('C_10__gamma_1__' + Model.NAME)
+    if clf is None: clf = joblib.load('C_1000__gamma_1__' + Model.NAME)
     test_Y_hat = clf.predict(data)
 
     jso = None
