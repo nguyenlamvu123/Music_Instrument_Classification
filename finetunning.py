@@ -17,7 +17,10 @@ row, col = data_set.shape  # Cacluate Shape
 X_train = data_set[:, :col-1]
 y_train = data_set[:, col-1]
 
-assert X_train.shape[0] == y_train.shape[0] == 289204  # 289205
+n_samples = X_train.shape[0]
+n_batches = n_samples // batch_size
+
+assert X_train.shape[0] == y_train.shape[0] == 289204, f'X_train.shape[0]: {X_train.shape[0]}'  # 289205
 
 def finetunning():
     param_grid = {
@@ -46,12 +49,19 @@ def finetunning():
 @timer
 def run(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
     clf = define_model(C=C, gamma=gamma, degree=degree, coef0=coef0)
-    clf.fit(X_train, y_train)
-    joblib.dump(clf, Model.NAME)
+    for i in range(n_batches):
+        print(f"{i + 1}/{n_batches}")
+        start_idx = i * batch_size
+        end_idx = (i + 1) * batch_size
+        batch_y = y_train[start_idx:end_idx]
+        assert len(set(batch_y)) > 1
+        batch_X = X_train[start_idx:end_idx]
+        clf.fit(batch_X, batch_y)
+    joblib.dump(clf, 'C_10__gamma_1__' + Model.NAME)
     main(clf=clf)
 
 
 if __name__ == '__main__':
-    # run(C=10, gamma=0.1, )  # 0.262939453125
-    run(C=20, gamma=0.1, )  #
-    run(C=1000, gamma=1, )  #
+    run(C=10, gamma=0.1, )  # 0.262939453125
+    # run(C=20, gamma=0.1, )  #
+    # run(C=1000, gamma=1, )  #
