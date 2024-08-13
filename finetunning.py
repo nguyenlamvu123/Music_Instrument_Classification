@@ -57,11 +57,11 @@ def run(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
         assert len(set(batch_y)) > 1
         batch_X = X_train[start_idx:end_idx]
         clf.fit(batch_X, batch_y)
-    joblib.dump(clf, 'C_10__gamma_1__' + Model.NAME)
+    joblib.dump(clf, 'C_1000__gamma_1__' + Model.NAME)
     main(clf=clf)
 
 
 if __name__ == '__main__':
-    run(C=10, gamma=0.1, )  # 0.262939453125
+    # run(C=10, gamma=0.1, )  # 0.262939453125
     # run(C=20, gamma=0.1, )  #
-    # run(C=1000, gamma=1, )  #
+    run(C=1000, gamma=1, )  #
