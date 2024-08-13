@@ -1,4 +1,5 @@
-import librosa
+import librosa, time
+from functools import wraps
 import numpy as np
 from tqdm import tqdm
 from sklearn import preprocessing
@@ -14,6 +15,17 @@ ts = CreateDataset.ts
 scaler = preprocessing.MinMaxScaler(feature_range=(-1,1))
 
 
+def timer(func):  # @timer
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"Execution time of {func.__name__}: {end - start} seconds")
+        return result
+    return wrapper
+
+
 def readdata(piece):
     is_created = False
     dataset_numpy = None
@@ -27,6 +39,7 @@ def readdata(piece):
             dataset_numpy = np.vstack((dataset_numpy, row))
     assert dataset_numpy is not None
     return scaler.fit_transform(dataset_numpy)
+
 
 def extract_feature(samples):
     result = []

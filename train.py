@@ -7,12 +7,13 @@ from sklearn import svm
 import joblib
 
 from config import Model, CreateDataset, debug, batch_size
-from feature_engineering import readdata
+from feature_engineering import readdata, timer
 
 csv_name = CreateDataset.Name
 
 
 def define_model(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
+    print(f'C={C}, gamma={gamma}, degree={degree}, coef0={coef0}')
     return svm.SVC(
         C=C,
         cache_size=200,
