@@ -1,6 +1,4 @@
-import joblib
-import sklearn
-import librosa
+import joblib, os, sklearn, librosa
 import numpy as np
 
 from feature_engineering import *
@@ -12,7 +10,7 @@ def main():
     labels = []
     samples = []
     for p in PATH:
-        labels.append(p.split('test/')[1].split('_')[0])
+        labels.append(p.split(os.sep)[-1].split('_')[0])
         sample, sr = librosa.load(p, sr=22050, duration=4.0)
         samples.append(sample)
 
