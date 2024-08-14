@@ -1,7 +1,7 @@
 import librosa
 import numpy as np
 from tqdm import tqdm
-import sklearn
+from sklearn import preprocessing
 from config import CreateDataset, sr
 
 sr = CreateDataset.sr
@@ -11,7 +11,7 @@ mfcc_dim = CreateDataset.mfcc_dim
 cs = CreateDataset.cs
 ms = CreateDataset.ms
 ts = CreateDataset.ts
-scaler = sklearn.preprocessing.MinMaxScaler(feature_range=(-1,1))
+scaler = preprocessing.MinMaxScaler(feature_range=(-1,1))
 
 
 def readdata(piece):

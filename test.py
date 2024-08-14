@@ -4,9 +4,9 @@ import numpy as np
 from feature_engineering import *
 from config import *
 
-PATH = librosa.util.find_files(Test_path.data_path)
-
-def main():
+def main(PATH=None) -> dict or None :
+    if PATH is None:  # run test
+        PATH = librosa.util.find_files(Test_path.data_path)
     labels = []
     samples = []
     for p in PATH:
@@ -22,9 +22,22 @@ def main():
     clf = joblib.load(Model.NAME)
     test_Y_hat = clf.predict(data)
 
-    accuracy = np.sum((test_Y_hat == labels)) / 200.0 * 100.0
+    jso = None
+    if PATH is None:  # run test
+        accuracy = np.sum((test_Y_hat == labels)) / 200.0 * 100.0
+        print('test accuracy = ' + str(accuracy) + ' %')
+    else:  # method is calles from gradio
+        result = list(test_Y_hat)
+        jso: dict or None = dict()
+        assert len(result) == len(PATH)
+        res_set: set = set(result)
+        for key in res_set:
+            jso[key] = list()
+            for i in range(len(result)):
+                if result[i] == key:
+                    jso[key].append(PATH[i].split(os.sep)[-1])
+    return jso
 
-    print('test accuracy = ' + str(accuracy) + ' %')
 
 if __name__ == '__main__':
     main()
