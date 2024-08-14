@@ -23,8 +23,7 @@ def draw3Dplotfor3feat():
     pass  # https://stackoverflow.com/questions/51495819/how-to-plot-svm-decision-boundary-in-sklearn-python
 
 
-def main(PATH=None) -> dict or None :
-    testflag: bool = False
+def main(PATH=None, testflag: bool = False) -> dict or None :
     if PATH is None:  # run test
         testflag = not testflag
         PATH = librosa.util.find_files(Test_path.data_path)
@@ -36,8 +35,6 @@ def main(PATH=None) -> dict or None :
         samples.append(sample)
 
     data = np.array([extract_feature(sample) for sample in samples])
-
-    scaler = sklearn.preprocessing.MinMaxScaler(feature_range=(-1,1))
     data = scaler.fit_transform(data)
 
     clf = joblib.load(Model.NAME)
@@ -60,4 +57,5 @@ def main(PATH=None) -> dict or None :
 
 
 if __name__ == '__main__':
-    main()
+    PATH = librosa.util.find_files('./dataset/valid')
+    main(PATH, True)
