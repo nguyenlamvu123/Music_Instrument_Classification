@@ -1,6 +1,8 @@
 import librosa
 import numpy as np
-from config import CreateDataset
+from tqdm import tqdm
+import sklearn
+from config import CreateDataset, sr
 
 sr = CreateDataset.sr
 fs = CreateDataset.fs
@@ -9,6 +11,22 @@ mfcc_dim = CreateDataset.mfcc_dim
 cs = CreateDataset.cs
 ms = CreateDataset.ms
 ts = CreateDataset.ts
+scaler = sklearn.preprocessing.MinMaxScaler(feature_range=(-1,1))
+
+
+def readdata(piece):
+    is_created = False
+    dataset_numpy = None
+    for audio in tqdm(piece):
+        samples, _ = librosa.load(audio, sr=sr, duration=4.0)
+        row = extract_feature(samples)
+        if not is_created:
+            dataset_numpy = np.array(row)
+            is_created = True
+        elif is_created:
+            dataset_numpy = np.vstack((dataset_numpy, row))
+    assert dataset_numpy is not None
+    return scaler.fit_transform(dataset_numpy)
 
 def extract_feature(samples):
     result = []
@@ -61,8 +79,3 @@ def extract_feature(samples):
     #     result.append(np.std(tonal_centroid[i, :]))
 
     return result
-
-
-
-
-

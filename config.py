@@ -1,4 +1,6 @@
 debug: bool = True
+sr: int = 22050
+batch_size: int = 100000
 
 
 class CreateDataset:
