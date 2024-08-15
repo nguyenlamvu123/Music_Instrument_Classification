@@ -26,7 +26,7 @@ def showdata_col3():
 outmp4list = list()
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    clf = joblib.load('C_10__gamma_1__' + Model.NAME)
+    clf = joblib.load('C_1000__gamma_1__' + Model.NAME)
 
     parser.add_argument(
         '--listen',
