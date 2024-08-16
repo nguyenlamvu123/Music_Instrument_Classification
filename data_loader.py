@@ -18,8 +18,22 @@ def get_sampels(data_set='train'):
     audios = []
     labels = []
     path_of_audios = librosa.util.find_files(data_path + data_set)
+    enough_genre = list()
+    gendic = dict()
     for audio in path_of_audios:
-        labels.append(audio.split(os.sep)[-1].split('_')[0])
+        label = audio.split(os.sep)[-1].split('_')[0]
+        if label in enough_genre:
+            continue
+        if label in gendic:
+            if gendic[label] >= 5500:
+                print(label, '__', gendic[label])
+                enough_genre.append(label)
+                continue
+            else:
+                gendic[label] += 1
+        else:
+            gendic[label] = 0
+        labels.append(label)
         audios.append(audio)
     audios_numpy = np.array(audios)
     return audios_numpy, labels

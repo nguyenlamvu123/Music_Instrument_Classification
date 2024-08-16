@@ -1,5 +1,9 @@
 import data_loader
 from sklearn.svm import SVC
+
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
+from sklearn.tree import DecisionTreeClassifier
+
 from sklearn.model_selection import GridSearchCV
 import numpy as np
 import pandas as pd
@@ -7,7 +11,7 @@ import librosa, joblib
 
 from train import readdata, batch_size, define_model, CreateDataset, Model, timer
 from test import main
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, confusion_matrix
 
 sr = CreateDataset.sr
 
@@ -47,8 +51,18 @@ def finetunning():
 
 
 @timer
+def run_():
+    clf = GradientBoostingClassifier(n_estimators=200, random_state=0, max_depth=2)
+    clf.fit(X_train, y_train)
+    main(clf=clf)
+
+
+@timer
 def run(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
-    clf = define_model(C=C, gamma=gamma, degree=degree, coef0=coef0)
+    # clf = define_model(C=C, gamma=gamma, degree=degree, coef0=coef0)  # SVC
+    # clf = GradientBoostingClassifier(n_estimators=200, random_state=0, max_depth=2)  # Accuracy: 0.202880859375
+    # clf = DecisionTreeClassifier(criterion="entropy")  # Accuracy: 0.168701171875
+    clf = RandomForestClassifier(n_estimators=100, random_state=0)
     # clf.fit(X_train, y_train)
     for i in range(n_batches):
         print(f"{i + 1}/{n_batches}")
@@ -71,4 +85,5 @@ def run(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
 if __name__ == '__main__':
     # run(C=10, gamma=0.1, )  # 0.262939453125
     # run(C=20, gamma=0.1, )  #
-    run(C=1000, gamma=1, )  #
+    # run(C=1000, gamma=1, )  #
+    run()  #
