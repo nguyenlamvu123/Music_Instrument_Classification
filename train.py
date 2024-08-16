@@ -8,6 +8,26 @@ import joblib
 
 from config import Model, CreateDataset
 
+
+def define_model(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
+    print(f'C={C}, gamma={gamma}, degree={degree}, coef0={coef0}')
+    return svm.SVC(
+        C=C,
+        cache_size=200,
+        class_weight=None,
+        coef0=coef0,
+        decision_function_shape='ovr',
+        degree=degree,
+        gamma=gamma,
+        kernel='linear',  # 'rbf',  #
+        max_iter=-1,
+        probability=False,
+        random_state=None,
+        shrinking=True,
+        tol=0.001,
+        verbose=False
+    )
+
 def main():
     # Load data
     data_set = pd.read_csv(CreateDataset.Name, index_col=False)
@@ -30,5 +50,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-

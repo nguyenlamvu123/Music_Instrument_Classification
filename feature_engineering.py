@@ -1,6 +1,7 @@
 import librosa
 import numpy as np
 from config import CreateDataset
+from sklearn import preprocessing
 
 sr = CreateDataset.sr
 fs = CreateDataset.fs
@@ -9,6 +10,7 @@ mfcc_dim = CreateDataset.mfcc_dim
 cs = CreateDataset.cs
 ms = CreateDataset.ms
 ts = CreateDataset.ts
+scaler = preprocessing.MinMaxScaler(feature_range=(-1,1))
 
 def extract_feature(samples):
     result = []
@@ -61,8 +63,3 @@ def extract_feature(samples):
     #     result.append(np.std(tonal_centroid[i, :]))
 
     return result
-
-
-
-
-
