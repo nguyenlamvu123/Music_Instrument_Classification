@@ -28,6 +28,8 @@ def main(PATH=None, testflag: bool = False, clf=None) -> dict or None :
     if PATH is None:  # run test
         testflag = True
         PATH = librosa.util.find_files(Test_path.data_path)
+    if debug:
+        PATH = PATH[:3]
     labels = []
     samples = []
     for p in PATH:
@@ -38,7 +40,7 @@ def main(PATH=None, testflag: bool = False, clf=None) -> dict or None :
     data = np.array([extract_feature(sample) for sample in samples])
     data = scaler.fit_transform(data)
 
-    if clf is None: clf = joblib.load('C_1000__gamma_1__' + Model.NAME)
+    if clf is None: clf = joblib.load(Model.NAME)
     test_Y_hat = clf.predict(data)
 
     jso = None

@@ -1,5 +1,14 @@
-debug: bool = True
+import os
+
+
+debug: bool = False
+amountofdata: int = 3 if debug else 60511
+    # 60511 khi lấy mỗi nhãn 5501 bản ghi
+    # 289204 khi lấy toàn bộ dataset
 batch_size: int = 100000
+makecsvofdataset: bool = False  # True
+root_dir = os.listdir(os.path.dirname(__file__))
+mod_name: tuple = ("SVC", "GradientBoostingClassifier", "DecisionTreeClassifier", "RandomForestClassifier")
 
 
 class CreateDataset:
@@ -95,3 +104,6 @@ class Test_path:
 class Model:
     # Name of Model
     NAME = 'model.pkl'
+
+
+mn = os.path.splitext(Model.NAME)

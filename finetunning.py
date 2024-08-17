@@ -1,32 +1,37 @@
-import data_loader
-from sklearn.svm import SVC
-
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
-from sklearn.tree import DecisionTreeClassifier
-
-from sklearn.model_selection import GridSearchCV
+import joblib,librosa, os
 import numpy as np
 import pandas as pd
-import librosa, joblib
+from sklearn.metrics import classification_report
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
 
-from train import readdata, batch_size, define_model, CreateDataset, Model, timer
-from test import main
-from sklearn.metrics import classification_report, confusion_matrix
+import data_loader
+from test import main, debug, amountofdata, makecsvofdataset
+from train import batch_size, define_model, CreateDataset, Model, timer, runfntg
+from train import main as main__
 
 sr = CreateDataset.sr
+
+if makecsvofdataset:
+    audios_numpy, labels = data_loader.get_sampels()
+    main__(audios_numpy, labels, fit=False)
 
 data_set = pd.read_csv(CreateDataset.Name, index_col=False)
 data_set = np.array(data_set)
 row, col = data_set.shape  # Cacluate Shape
-X_train = data_set[:, :col-1]
-y_train = data_set[:, col-1]
+X_train = data_set[:, :col-1] if not debug else data_set[:3, :col-1]
+y_train = data_set[:, col-1] if not debug else np.array(['bass', 'basssssssssss', 'bass', ])
 
 n_samples = X_train.shape[0]
 n_batches = n_samples // batch_size
 
-assert X_train.shape[0] == y_train.shape[0] == 289204, f'X_train.shape[0]: {X_train.shape[0]}'  # 289205
+if debug:
+    assert X_train.shape[0] == y_train.shape[0] == amountofdata, f'X_train.shape[0]: {X_train.shape[0]}'  # 5501*11
+else:
+    if not X_train.shape[0] == y_train.shape[0] == amountofdata:
+        print(f'X_train.shape[0] should be {amountofdata}, but it is {X_train.shape[0]}')
 
-def finetunning():
+def finetunning():  # GridSearchCV
     param_grid = {
         'C': [0.1, 1, 10, 100, 1000],
         'gamma': [1, 0.1, 0.01, 0.001, 0.0001],
@@ -51,19 +56,15 @@ def finetunning():
 
 
 @timer
-def run_():
-    clf = GradientBoostingClassifier(n_estimators=200, random_state=0, max_depth=2)
+@runfntg
+def run_(clf):  # train all data
     clf.fit(X_train, y_train)
     main(clf=clf)
 
 
 @timer
-def run(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
-    # clf = define_model(C=C, gamma=gamma, degree=degree, coef0=coef0)  # SVC
-    # clf = GradientBoostingClassifier(n_estimators=200, random_state=0, max_depth=2)  # Accuracy: 0.202880859375
-    # clf = DecisionTreeClassifier(criterion="entropy")  # Accuracy: 0.168701171875
-    clf = RandomForestClassifier(n_estimators=100, random_state=0)
-    # clf.fit(X_train, y_train)
+@runfntg
+def run(clf):  # every_fragment_of_dataset_will_be_trained
     for i in range(n_batches):
         print(f"{i + 1}/{n_batches}")
         start_idx = i * batch_size
@@ -78,12 +79,34 @@ def run(C=1.0, gamma=0.02, degree=3, coef0=0.0, ):
         if len(set(remaining_y)) > 1:
             remaining_X = X_train[n_batches * batch_size:]
             clf.fit(remaining_X, remaining_y)
-    joblib.dump(clf, f'C_{C}__gamma_{gamma}__' + Model.NAME)
     main(clf=clf)
 
 
 if __name__ == '__main__':
-    # run(C=10, gamma=0.1, )  # 0.262939453125
-    # run(C=20, gamma=0.1, )  #
-    # run(C=1000, gamma=1, )  #
-    run()  #
+    for kw in (
+            dict(
+                # C=1.0,  # 1.0  # SVC
+                n_estimators=None,  # 200  # GradientBoostingClassifier
+                criterion=None,  # "entropy",  # DecisionTreeClassifier
+                n_estimators_R=None,  # 100,  # RandomForestClassifier
+            ),
+            dict(
+                C=None,  # 1.0  # SVC
+                # n_estimators=200,  # 200  # GradientBoostingClassifier
+                criterion=None,  # "entropy",  # DecisionTreeClassifier
+                n_estimators_R=None,  # 100,  # RandomForestClassifier
+            ),
+            dict(
+                C=None,  # 1.0  # SVC
+                n_estimators=None,  # 200  # GradientBoostingClassifier
+                # criterion="entropy",  # "entropy",  # DecisionTreeClassifier
+                n_estimators_R=None,  # 100,  # RandomForestClassifier
+            ),
+            dict(
+                C=None,  # 1.0  # SVC
+                n_estimators=None,  # 200  # GradientBoostingClassifier
+                criterion=None,  # "entropy",  # DecisionTreeClassifier
+                # n_estimators_R=100,  # 100,  # RandomForestClassifier
+            ),
+    ):
+        run_(**kw)

@@ -3,7 +3,7 @@ from functools import wraps
 import numpy as np
 from tqdm import tqdm
 from sklearn import preprocessing
-from config import CreateDataset
+from config import CreateDataset, debug
 
 sr = CreateDataset.sr
 fs = CreateDataset.fs
@@ -21,7 +21,8 @@ def timer(func):  # @timer
         start = time.time()
         result = func(*args, **kwargs)
         end = time.time()
-        print(f"Execution time of {func.__name__}: {end - start} seconds")
+        if debug:
+            print(f"Execution time of {func.__name__}: {end - start} seconds")
         return result
     return wrapper
 
