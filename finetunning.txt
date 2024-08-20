@@ -1,0 +1,604 @@
+13082024
+    [CV 1/5] END ........C=0.1, gamma=1, kernel=rbf;, score=0.783 total time=61.0min
+    [CV 2/5] END ........C=0.1, gamma=1, kernel=rbf;, score=0.776 total time=59.4min
+    [CV 3/5] END ........C=0.1, gamma=1, kernel=rbf;, score=0.722 total time=59.7min
+    [CV 4/5] END ........C=0.1, gamma=1, kernel=rbf;, score=0.737 total time=60.2min
+    [CV 5/5] END ........C=0.1, gamma=1, kernel=rbf;, score=0.612 total time=56.2min
+    [CV 1/5] END ......C=0.1, gamma=0.1, kernel=rbf;, score=0.778 total time=35.1min
+    [CV 2/5] END ......C=0.1, gamma=0.1, kernel=rbf;, score=0.763 total time=34.9min
+    [CV 3/5] END ......C=0.1, gamma=0.1, kernel=rbf;, score=0.724 total time=33.8min
+    [CV 4/5] END ......C=0.1, gamma=0.1, kernel=rbf;, score=0.749 total time=34.0min
+    [CV 5/5] END ......C=0.1, gamma=0.1, kernel=rbf;, score=0.614 total time=31.7min
+    [CV 1/5] END .....C=0.1, gamma=0.01, kernel=rbf;, score=0.682 total time=57.9min
+    [CV 2/5] END .....C=0.1, gamma=0.01, kernel=rbf;, score=0.676 total time=57.1min
+    [CV 3/5] END .....C=0.1, gamma=0.01, kernel=rbf;, score=0.665 total time=58.1min
+    [CV 4/5] END .....C=0.1, gamma=0.01, kernel=rbf;, score=0.676 total time=58.8min
+    [CV 5/5] END .....C=0.1, gamma=0.01, kernel=rbf;, score=0.587 total time=55.2min
+    [CV 1/5] END ....C=0.1, gamma=0.001, kernel=rbf;, score=0.529 total time=90.6min
+    [CV 2/5] END ....C=0.1, gamma=0.001, kernel=rbf;, score=0.550 total time=88.7min
+    [CV 3/5] END ....C=0.1, gamma=0.001, kernel=rbf;, score=0.526 total time=89.3min
+    [CV 4/5] END ....C=0.1, gamma=0.001, kernel=rbf;, score=0.546 total time=90.2min
+    [CV 5/5] END ....C=0.1, gamma=0.001, kernel=rbf;, score=0.509 total time=86.7min
+    [CV 1/5] END ..C=0.1, gamma=0.0001, kernel=rbf;, score=0.228 total time=102.3min
+    [CV 2/5] END ..C=0.1, gamma=0.0001, kernel=rbf;, score=0.235 total time=102.8min
+    [CV 3/5] END ..C=0.1, gamma=0.0001, kernel=rbf;, score=0.230 total time=103.3min
+    [CV 4/5] END ..C=0.1, gamma=0.0001, kernel=rbf;, score=0.229 total time=106.3min
+    [CV 5/5] END ..C=0.1, gamma=0.0001, kernel=rbf;, score=0.241 total time=103.7min
+    [CV 1/5] END ..........C=1, gamma=1, kernel=rbf;, score=0.789 total time=72.2min
+    [CV 2/5] END ..........C=1, gamma=1, kernel=rbf;, score=0.782 total time=67.0min
+    [CV 3/5] END ..........C=1, gamma=1, kernel=rbf;, score=0.749 total time=69.2min
+    [CV 4/5] END ..........C=1, gamma=1, kernel=rbf;, score=0.768 total time=69.8min
+    [CV 5/5] END ..........C=1, gamma=1, kernel=rbf;, score=0.630 total time=59.8min
+    [CV 1/5] END ........C=1, gamma=0.1, kernel=rbf;, score=0.802 total time=19.1min
+    [CV 2/5] END ........C=1, gamma=0.1, kernel=rbf;, score=0.785 total time=17.6min
+    [CV 3/5] END ........C=1, gamma=0.1, kernel=rbf;, score=0.752 total time=17.6min
+    [CV 4/5] END ........C=1, gamma=0.1, kernel=rbf;, score=0.785 total time=18.0min
+    [CV 5/5] END ........C=1, gamma=0.1, kernel=rbf;, score=0.626 total time=15.6min
+    [CV 1/5] END .......C=1, gamma=0.01, kernel=rbf;, score=0.757 total time=35.6min
+    [CV 2/5] END .......C=1, gamma=0.01, kernel=rbf;, score=0.723 total time=35.5min
+    [CV 3/5] END .......C=1, gamma=0.01, kernel=rbf;, score=0.712 total time=34.3min
+    [CV 4/5] END .......C=1, gamma=0.01, kernel=rbf;, score=0.732 total time=36.1min
+    [CV 5/5] END .......C=1, gamma=0.01, kernel=rbf;, score=0.606 total time=33.5min
+    [CV 1/5] END ......C=1, gamma=0.001, kernel=rbf;, score=0.665 total time=60.7min
+    [CV 2/5] END ......C=1, gamma=0.001, kernel=rbf;, score=0.664 total time=57.5min
+    [CV 3/5] END ......C=1, gamma=0.001, kernel=rbf;, score=0.652 total time=57.4min
+    [CV 4/5] END ......C=1, gamma=0.001, kernel=rbf;, score=0.666 total time=60.2min
+    [CV 5/5] END ......C=1, gamma=0.001, kernel=rbf;, score=0.580 total time=55.7min
+    [CV 1/5] END .....C=1, gamma=0.0001, kernel=rbf;, score=0.529 total time=89.5min
+    [CV 2/5] END .....C=1, gamma=0.0001, kernel=rbf;, score=0.550 total time=87.5min
+    [CV 3/5] END .....C=1, gamma=0.0001, kernel=rbf;, score=0.526 total time=88.3min
+    [CV 4/5] END .....C=1, gamma=0.0001, kernel=rbf;, score=0.546 total time=90.2min
+    [CV 5/5] END .....C=1, gamma=0.0001, kernel=rbf;, score=0.508 total time=85.4min
+    [CV 1/5] END .........C=10, gamma=1, kernel=rbf;, score=0.784 total time=70.1min
+    [CV 2/5] END .........C=10, gamma=1, kernel=rbf;, score=0.777 total time=67.9min
+    [CV 3/5] END .........C=10, gamma=1, kernel=rbf;, score=0.749 total time=66.9min
+    [CV 4/5] END .........C=10, gamma=1, kernel=rbf;, score=0.767 total time=65.9min
+    [CV 5/5] END .........C=10, gamma=1, kernel=rbf;, score=0.628 total time=60.8min
+    [CV 1/5] END .......C=10, gamma=0.1, kernel=rbf;, score=0.806 total time=13.0min
+    [CV 2/5] END .......C=10, gamma=0.1, kernel=rbf;, score=0.794 total time=12.0min
+    [CV 3/5] END .......C=10, gamma=0.1, kernel=rbf;, score=0.759 total time=11.9min
+    [CV 4/5] END .......C=10, gamma=0.1, kernel=rbf;, score=0.793 total time=12.3min
+    [CV 5/5] END .......C=10, gamma=0.1, kernel=rbf;, score=0.631 total time=10.3min
+    [CV 1/5] END ......C=10, gamma=0.01, kernel=rbf;, score=0.789 total time=23.0min
+    [CV 2/5] END ......C=10, gamma=0.01, kernel=rbf;, score=0.763 total time=21.9min
+    [CV 3/5] END ......C=10, gamma=0.01, kernel=rbf;, score=0.731 total time=21.8min
+    [CV 4/5] END ......C=10, gamma=0.01, kernel=rbf;, score=0.762 total time=22.3min
+    [CV 5/5] END ......C=10, gamma=0.01, kernel=rbf;, score=0.611 total time=19.1min
+    [CV 1/5] END .....C=10, gamma=0.001, kernel=rbf;, score=0.730 total time=37.2min
+    [CV 2/5] END .....C=10, gamma=0.001, kernel=rbf;, score=0.700 total time=36.3min
+    [CV 3/5] END .....C=10, gamma=0.001, kernel=rbf;, score=0.695 total time=36.1min
+    [CV 4/5] END .....C=10, gamma=0.001, kernel=rbf;, score=0.705 total time=36.7min
+    [CV 5/5] END .....C=10, gamma=0.001, kernel=rbf;, score=0.597 total time=32.7min
+    [CV 1/5] END ....C=10, gamma=0.0001, kernel=rbf;, score=0.662 total time=61.2min
+    [CV 2/5] END ....C=10, gamma=0.0001, kernel=rbf;, score=0.662 total time=58.8min
+    [CV 3/5] END ....C=10, gamma=0.0001, kernel=rbf;, score=0.650 total time=57.3min
+    [CV 4/5] END ....C=10, gamma=0.0001, kernel=rbf;, score=0.665 total time=57.6min
+    [CV 5/5] END ....C=10, gamma=0.0001, kernel=rbf;, score=0.578 total time=54.0min
+    [CV 1/5] END ........C=100, gamma=1, kernel=rbf;, score=0.783 total time=73.9min
+    [CV 2/5] END ........C=100, gamma=1, kernel=rbf;, score=0.777 total time=69.3min
+    [CV 3/5] END ........C=100, gamma=1, kernel=rbf;, score=0.749 total time=68.9min
+    [CV 4/5] END ........C=100, gamma=1, kernel=rbf;, score=0.766 total time=68.3min
+    [CV 5/5] END ........C=100, gamma=1, kernel=rbf;, score=0.628 total time=60.1min
+    [CV 1/5] END ......C=100, gamma=0.1, kernel=rbf;, score=0.802 total time=14.7min
+    [CV 2/5] END ......C=100, gamma=0.1, kernel=rbf;, score=0.787 total time=13.2min
+    [CV 3/5] END ......C=100, gamma=0.1, kernel=rbf;, score=0.760 total time=12.5min
+    [CV 4/5] END ......C=100, gamma=0.1, kernel=rbf;, score=0.780 total time=13.1min
+    [CV 5/5] END ......C=100, gamma=0.1, kernel=rbf;, score=0.636 total time=11.0min
+    [CV 1/5] END .....C=100, gamma=0.01, kernel=rbf;, score=0.792 total time=20.3min
+    [CV 2/5] END .....C=100, gamma=0.01, kernel=rbf;, score=0.774 total time=19.0min
+    [CV 3/5] END .....C=100, gamma=0.01, kernel=rbf;, score=0.748 total time=18.9min
+    [CV 4/5] END .....C=100, gamma=0.01, kernel=rbf;, score=0.786 total time=19.2min
+    [CV 5/5] END .....C=100, gamma=0.01, kernel=rbf;, score=0.621 total time=16.1min
+    [CV 1/5] END ....C=100, gamma=0.001, kernel=rbf;, score=0.761 total time=27.0min
+    [CV 2/5] END ....C=100, gamma=0.001, kernel=rbf;, score=0.732 total time=25.8min
+    [CV 3/5] END ....C=100, gamma=0.001, kernel=rbf;, score=0.714 total time=25.8min
+    [CV 4/5] END ....C=100, gamma=0.001, kernel=rbf;, score=0.736 total time=26.1min
+    [CV 5/5] END ....C=100, gamma=0.001, kernel=rbf;, score=0.605 total time=22.5min
+    [CV 1/5] END ...C=100, gamma=0.0001, kernel=rbf;, score=0.720 total time=37.4min
+    [CV 2/5] END ...C=100, gamma=0.0001, kernel=rbf;, score=0.693 total time=36.8min
+    [CV 3/5] END ...C=100, gamma=0.0001, kernel=rbf;, score=0.689 total time=36.4min
+    [CV 4/5] END ...C=100, gamma=0.0001, kernel=rbf;, score=0.697 total time=37.0min
+    [CV 5/5] END ...C=100, gamma=0.0001, kernel=rbf;, score=0.594 total time=33.8min
+    [CV 1/5] END .......C=1000, gamma=1, kernel=rbf;, score=0.783 total time=70.6min
+    [CV 2/5] END .......C=1000, gamma=1, kernel=rbf;, score=0.777 total time=67.4min
+    [CV 3/5] END .......C=1000, gamma=1, kernel=rbf;, score=0.749 total time=69.6min
+    [CV 4/5] END .......C=1000, gamma=1, kernel=rbf;, score=0.766 total time=70.4min
+    [CV 5/5] END .......C=1000, gamma=1, kernel=rbf;, score=0.628 total time=63.1min
+    [CV 1/5] END .....C=1000, gamma=0.1, kernel=rbf;, score=0.791 total time=18.7min
+    [CV 2/5] END .....C=1000, gamma=0.1, kernel=rbf;, score=0.778 total time=16.9min
+    [CV 3/5] END .....C=1000, gamma=0.1, kernel=rbf;, score=0.756 total time=14.8min
+    [CV 4/5] END .....C=1000, gamma=0.1, kernel=rbf;, score=0.783 total time=15.8min
+    [CV 5/5] END .....C=1000, gamma=0.1, kernel=rbf;, score=0.638 total time=12.8min
+    [CV 1/5] END ....C=1000, gamma=0.01, kernel=rbf;, score=0.797 total time=39.4min
+    [CV 2/5] END ....C=1000, gamma=0.01, kernel=rbf;, score=0.780 total time=35.2min
+    [CV 3/5] END ....C=1000, gamma=0.01, kernel=rbf;, score=0.749 total time=35.0min
+    [CV 4/5] END ....C=1000, gamma=0.01, kernel=rbf;, score=0.789 total time=34.9min
+    [CV 5/5] END ....C=1000, gamma=0.01, kernel=rbf;, score=0.624 total time=29.0min
+    [CV 1/5] END ...C=1000, gamma=0.001, kernel=rbf;, score=0.780 total time=29.1min
+    [CV 2/5] END ...C=1000, gamma=0.001, kernel=rbf;, score=0.762 total time=27.8min
+    [CV 3/5] END ...C=1000, gamma=0.001, kernel=rbf;, score=0.730 total time=27.6min
+    [CV 4/5] END ...C=1000, gamma=0.001, kernel=rbf;, score=0.760 total time=27.6min
+    [CV 5/5] END ...C=1000, gamma=0.001, kernel=rbf;, score=0.611 total time=22.7min
+    [CV 1/5] END ..C=1000, gamma=0.0001, kernel=rbf;, score=0.737 total time=28.5min
+    [CV 2/5] END ..C=1000, gamma=0.0001, kernel=rbf;, score=0.707 total time=27.4min
+    [CV 3/5] END ..C=1000, gamma=0.0001, kernel=rbf;, score=0.697 total time=27.7min
+    [CV 4/5] END ..C=1000, gamma=0.0001, kernel=rbf;, score=0.713 total time=28.1min
+    [CV 5/5] END ..C=1000, gamma=0.0001, kernel=rbf;, score=0.600 total time=24.3min
+    {'C': 10, 'gamma': 0.1, 'kernel': 'rbf'}
+    @@@@@@@ SVC(C=10, gamma=0.1)
+
+    run(C=10, gamma=0.1, )  # 0.262939453125
+
+14082024
+    /home/zaibachkhoa/Documents/Music-Genre-Classification-From-Audio-Files/Music_Instrument_Classification/venv/bin/python /home/zaibachkhoa/Documents/Music-Genre-Classification-From-Audio-Files/Music_Instrument_Classification/finetunning_forloop.py 
+      0%|          | 0/4096 [00:00<?, ?it/s]/home/zaibachkhoa/Documents/Music-Genre-Classification-From-Audio-Files/Music_Instrument_Classification/feature_engineering.py:46: FutureWarning: librosa.beat.tempo
+        This function was moved to 'librosa.feature.rhythm.tempo' in librosa version 0.10.0.
+        This alias will be removed in librosa version 1.0.
+      tempo = librosa.beat.tempo(y=samples, sr=sr, hop_length=hs)
+    100%|██████████| 4096/4096 [02:12<00:00, 30.98it/s]
+    ################### model__C_1000__gamma_1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.26      0.80      0.39       843
+           brass       0.59      0.48      0.53       269
+           flute       0.56      0.15      0.24       180
+          guitar       0.60      0.39      0.47       652
+        keyboard       0.51      0.11      0.18       766
+          mallet       0.26      0.30      0.28       202
+           organ       0.76      0.28      0.41       502
+            reed       0.80      0.03      0.07       235
+          string       0.95      0.49      0.65       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.05      0.01      0.01       141
+    
+        accuracy                           0.37      4096
+       macro avg       0.49      0.28      0.29      4096
+    weighted avg       0.53      0.37      0.35      4096
+    
+    ################### model__C_1000__gamma_0.1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.28      0.98      0.44       843
+           brass       0.34      0.70      0.46       269
+           flute       0.33      0.81      0.47       180
+          guitar       0.70      0.12      0.20       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.05      0.00      0.01       202
+           organ       0.67      0.00      0.01       502
+            reed       0.00      0.00      0.00       235
+          string       0.38      0.03      0.05       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.33      0.01      0.03       141
+    
+        accuracy                           0.30      4096
+       macro avg       0.28      0.24      0.15      4096
+    weighted avg       0.33      0.30      0.18      4096
+    
+    ################### model__C_1000__gamma_0.01__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.29      0.95      0.45       843
+           brass       0.25      0.78      0.38       269
+           flute       0.32      0.86      0.47       180
+          guitar       0.46      0.02      0.04       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.00      0.00      0.00       202
+           organ       0.00      0.00      0.00       502
+            reed       0.00      0.00      0.00       235
+          string       0.00      0.00      0.00       306
+           vocal       0.00      0.00      0.00       141
+    
+        accuracy                           0.29      4096
+       macro avg       0.13      0.26      0.13      4096
+    weighted avg       0.16      0.29      0.14      4096
+    
+    ################### model__C_1000__gamma_0.001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.27      0.98      0.43       843
+           brass       0.28      0.78      0.41       269
+           flute       0.25      0.49      0.33       180
+          guitar       0.00      0.00      0.00       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.00      0.00      0.00       202
+           organ       0.00      0.00      0.00       502
+            reed       0.00      0.00      0.00       235
+          string       0.00      0.00      0.00       306
+           vocal       0.00      0.00      0.00       141
+    
+        accuracy                           0.27      4096
+       macro avg       0.08      0.22      0.12      4096
+    weighted avg       0.09      0.27      0.13      4096
+    
+    ################### model__C_1000__gamma_0.0001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.28      0.95      0.43       843
+           brass       0.26      0.86      0.40       269
+           flute       0.13      0.22      0.16       180
+          guitar       0.00      0.00      0.00       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.00      0.00      0.00       202
+           organ       0.00      0.00      0.00       502
+            reed       0.00      0.00      0.00       235
+          string       0.00      0.00      0.00       306
+           vocal       0.00      0.00      0.00       141
+    
+        accuracy                           0.26      4096
+       macro avg       0.07      0.20      0.10      4096
+    weighted avg       0.08      0.26      0.12      4096
+    
+    ################### model__C_100__gamma_1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.26      0.80      0.39       843
+           brass       0.59      0.48      0.53       269
+           flute       0.56      0.15      0.24       180
+          guitar       0.61      0.39      0.48       652
+        keyboard       0.51      0.11      0.19       766
+          mallet       0.26      0.30      0.28       202
+           organ       0.76      0.28      0.41       502
+            reed       0.80      0.03      0.07       235
+          string       0.95      0.49      0.65       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.05      0.01      0.01       141
+    
+        accuracy                           0.37      4096
+       macro avg       0.49      0.28      0.29      4096
+    weighted avg       0.53      0.37      0.35      4096
+    
+    ################### model__C_100__gamma_0.1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.28      0.99      0.44       843
+           brass       0.33      0.70      0.45       269
+           flute       0.34      0.79      0.47       180
+          guitar       0.78      0.11      0.19       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.06      0.00      0.01       202
+           organ       0.50      0.00      0.01       502
+            reed       0.00      0.00      0.00       235
+          string       0.40      0.03      0.05       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.33      0.01      0.03       141
+    
+        accuracy                           0.30      4096
+       macro avg       0.27      0.24      0.15      4096
+    weighted avg       0.32      0.30      0.18      4096
+    
+    ################### model__C_100__gamma_0.01__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.28      0.96      0.44       843
+           brass       0.29      0.74      0.42       269
+           flute       0.30      0.88      0.44       180
+          guitar       1.00      0.02      0.04       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.00      0.00      0.00       202
+           organ       0.00      0.00      0.00       502
+            reed       0.00      0.00      0.00       235
+          string       0.00      0.00      0.00       306
+           vocal       0.00      0.00      0.00       141
+    
+        accuracy                           0.29      4096
+       macro avg       0.19      0.26      0.13      4096
+    weighted avg       0.25      0.29      0.14      4096
+    
+    ################### model__C_100__gamma_0.001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.26      0.97      0.42       843
+           brass       0.28      0.70      0.40       269
+           flute       0.18      0.34      0.24       180
+          guitar       0.00      0.00      0.00       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.00      0.00      0.00       202
+           organ       0.00      0.00      0.00       502
+            reed       0.00      0.00      0.00       235
+          string       0.00      0.00      0.00       306
+           vocal       0.00      0.00      0.00       141
+    
+        accuracy                           0.26      4096
+       macro avg       0.07      0.20      0.11      4096
+    weighted avg       0.08      0.26      0.12      4096
+    
+    ################### model__C_100__gamma_0.0001__kernel_rbf.pkl
+    
+                  precision    recall  f1-score   support
+    
+            bass       0.27      0.93      0.41       843
+           brass       0.25      0.67      0.37       269
+           flute       0.11      0.17      0.13       180
+          guitar       0.00      0.00      0.00       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.52      0.05      0.10       202
+           organ       0.00      0.00      0.00       502
+            reed       0.22      0.03      0.05       235
+          string       0.00      0.00      0.00       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.13      0.03      0.05       141
+    
+        accuracy                           0.25      4096
+       macro avg       0.14      0.17      0.10      4096
+    weighted avg       0.12      0.25      0.12      4096
+    
+    ################### model__C_10__gamma_1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.26      0.80      0.39       843
+           brass       0.59      0.48      0.53       269
+           flute       0.56      0.15      0.24       180
+          guitar       0.61      0.39      0.48       652
+        keyboard       0.51      0.12      0.19       766
+          mallet       0.26      0.29      0.27       202
+           organ       0.77      0.28      0.41       502
+            reed       0.80      0.03      0.07       235
+          string       0.95      0.49      0.65       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.05      0.01      0.01       141
+    
+        accuracy                           0.37      4096
+       macro avg       0.49      0.28      0.29      4096
+    weighted avg       0.54      0.37      0.35      4096
+    
+    ################### model__C_10__gamma_0.1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.28      1.00      0.44       843
+           brass       0.31      0.72      0.44       269
+           flute       0.39      0.71      0.50       180
+          guitar       0.66      0.07      0.12       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.00      0.00      0.00       202
+           organ       0.40      0.00      0.01       502
+            reed       0.00      0.00      0.00       235
+          string       0.41      0.02      0.04       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.57      0.03      0.05       141
+    
+        accuracy                           0.30      4096
+       macro avg       0.27      0.23      0.15      4096
+    weighted avg       0.30      0.30      0.17      4096
+    
+    ################### model__C_10__gamma_0.01__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.26      0.97      0.41       843
+           brass       0.32      0.72      0.45       269
+           flute       0.24      0.48      0.32       180
+          guitar       1.00      0.02      0.03       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.00      0.00      0.00       202
+           organ       0.00      0.00      0.00       502
+            reed       0.00      0.00      0.00       235
+          string       0.00      0.00      0.00       306
+           vocal       0.00      0.00      0.00       141
+    
+        accuracy                           0.27      4096
+       macro avg       0.18      0.22      0.12      4096
+    weighted avg       0.24      0.27      0.13      4096
+    
+    ################### model__C_10__gamma_0.001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.27      0.95      0.42       843
+           brass       0.26      0.66      0.38       269
+           flute       0.14      0.22      0.17       180
+          guitar       0.00      0.00      0.00       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.43      0.04      0.08       202
+           organ       0.00      0.00      0.00       502
+            reed       0.23      0.03      0.05       235
+          string       0.02      0.00      0.01       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.04      0.01      0.01       141
+    
+        accuracy                           0.25      4096
+       macro avg       0.13      0.17      0.10      4096
+    weighted avg       0.12      0.25      0.13      4096
+    
+    ################### model__C_10__gamma_0.0001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.27      0.84      0.41       843
+           brass       0.32      0.59      0.42       269
+           flute       0.36      0.11      0.16       180
+          guitar       0.21      0.03      0.05       652
+        keyboard       1.00      0.00      0.00       766
+          mallet       0.30      0.22      0.26       202
+           organ       0.49      0.23      0.31       502
+            reed       0.20      0.05      0.08       235
+          string       0.40      0.33      0.36       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.18      0.23      0.21       141
+    
+        accuracy                           0.30      4096
+       macro avg       0.34      0.24      0.21      4096
+    weighted avg       0.44      0.30      0.22      4096
+    
+    ################### model__C_1__gamma_1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.26      0.79      0.39       843
+           brass       0.60      0.48      0.53       269
+           flute       0.60      0.15      0.24       180
+          guitar       0.58      0.39      0.47       652
+        keyboard       0.50      0.11      0.19       766
+          mallet       0.27      0.30      0.28       202
+           organ       0.76      0.28      0.41       502
+            reed       0.80      0.03      0.07       235
+          string       0.95      0.49      0.65       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.05      0.01      0.01       141
+    
+        accuracy                           0.37      4096
+       macro avg       0.49      0.28      0.29      4096
+    weighted avg       0.53      0.37      0.35      4096
+    
+    ################### model__C_1__gamma_0.1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.28      0.99      0.43       843
+           brass       0.33      0.70      0.44       269
+           flute       0.39      0.61      0.48       180
+          guitar       0.52      0.09      0.15       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.10      0.01      0.02       202
+           organ       0.56      0.01      0.02       502
+            reed       0.00      0.00      0.00       235
+          string       0.57      0.07      0.12       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.47      0.06      0.11       141
+    
+        accuracy                           0.30      4096
+       macro avg       0.29      0.23      0.16      4096
+    weighted avg       0.31      0.30      0.18      4096
+    
+    ################### model__C_1__gamma_0.01__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.26      0.98      0.41       843
+           brass       0.32      0.65      0.43       269
+           flute       0.19      0.27      0.22       180
+          guitar       0.42      0.01      0.02       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.40      0.05      0.09       202
+           organ       0.50      0.00      0.00       502
+            reed       0.27      0.03      0.06       235
+          string       0.15      0.02      0.03       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.13      0.02      0.04       141
+    
+        accuracy                           0.26      4096
+       macro avg       0.24      0.18      0.12      4096
+    weighted avg       0.26      0.26      0.14      4096
+    
+    ################### model__C_1__gamma_0.001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.27      0.85      0.41       843
+           brass       0.32      0.59      0.42       269
+           flute       0.39      0.11      0.17       180
+          guitar       0.16      0.02      0.03       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.28      0.20      0.24       202
+           organ       0.49      0.23      0.31       502
+            reed       0.21      0.05      0.08       235
+          string       0.43      0.33      0.37       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.18      0.23      0.20       141
+    
+        accuracy                           0.29      4096
+       macro avg       0.25      0.24      0.20      4096
+    weighted avg       0.24      0.29      0.21      4096
+    
+    ################### model__C_1__gamma_0.0001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.25      0.79      0.38       843
+           brass       0.73      0.18      0.29       269
+           flute       0.00      0.00      0.00       180
+          guitar       0.27      0.02      0.04       652
+        keyboard       0.40      0.15      0.22       766
+          mallet       0.23      0.20      0.22       202
+           organ       0.37      0.36      0.36       502
+            reed       0.05      0.03      0.03       235
+          string       0.29      0.25      0.27       306
+           vocal       0.50      0.01      0.01       141
+    
+        accuracy                           0.28      4096
+       macro avg       0.31      0.20      0.18      4096
+    weighted avg       0.32      0.28      0.22      4096
+    
+    ################### model__C_0.1__gamma_1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.24      0.83      0.37       843
+           brass       0.58      0.40      0.47       269
+           flute       0.80      0.13      0.23       180
+          guitar       0.35      0.13      0.19       652
+        keyboard       0.56      0.16      0.25       766
+          mallet       0.22      0.13      0.17       202
+           organ       0.79      0.25      0.37       502
+            reed       0.67      0.02      0.03       235
+          string       0.97      0.51      0.67       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.00      0.00      0.00       141
+    
+        accuracy                           0.33      4096
+       macro avg       0.47      0.23      0.25      4096
+    weighted avg       0.50      0.33      0.30      4096
+    
+    ################### model__C_0.1__gamma_0.1__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.27      0.92      0.42       843
+           brass       0.36      0.64      0.46       269
+           flute       0.48      0.23      0.31       180
+          guitar       0.40      0.12      0.19       652
+        keyboard       0.00      0.00      0.00       766
+          mallet       0.24      0.08      0.12       202
+           organ       0.58      0.12      0.19       502
+            reed       0.30      0.03      0.05       235
+          string       0.67      0.34      0.45       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.21      0.12      0.15       141
+    
+        accuracy                           0.31      4096
+       macro avg       0.32      0.24      0.21      4096
+    weighted avg       0.32      0.31      0.23      4096
+    
+    ################### model__C_0.1__gamma_0.01__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.27      0.86      0.41       843
+           brass       0.35      0.60      0.44       269
+           flute       0.52      0.13      0.21       180
+          guitar       0.13      0.01      0.02       652
+        keyboard       1.00      0.00      0.01       766
+          mallet       0.24      0.17      0.20       202
+           organ       0.52      0.23      0.32       502
+            reed       0.23      0.06      0.09       235
+          string       0.52      0.36      0.43       306
+           synth       0.00      0.00      0.00         0
+           vocal       0.17      0.24      0.20       141
+    
+        accuracy                           0.30      4096
+       macro avg       0.36      0.24      0.21      4096
+    weighted avg       0.44      0.30      0.22      4096
+    
+    ################### model__C_0.1__gamma_0.001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.25      0.79      0.38       843
+           brass       0.72      0.17      0.28       269
+           flute       0.00      0.00      0.00       180
+          guitar       0.27      0.02      0.04       652
+        keyboard       0.40      0.15      0.22       766
+          mallet       0.23      0.20      0.21       202
+           organ       0.36      0.36      0.36       502
+            reed       0.05      0.03      0.03       235
+          string       0.29      0.24      0.27       306
+           vocal       0.50      0.01      0.01       141
+    
+        accuracy                           0.28      4096
+       macro avg       0.31      0.20      0.18      4096
+    weighted avg       0.32      0.28      0.22      4096
+    
+    ################### model__C_0.1__gamma_0.0001__kernel_rbf.pkl
+                  precision    recall  f1-score   support
+    
+            bass       0.21      1.00      0.35       843
+           brass       0.00      0.00      0.00       269
+           flute       0.00      0.00      0.00       180
+          guitar       0.00      0.00      0.00       652
+        keyboard       0.06      0.00      0.01       766
+          mallet       0.00      0.00      0.00       202
+           organ       0.00      0.00      0.00       502
+            reed       0.00      0.00      0.00       235
+          string       0.00      0.00      0.00       306
+           vocal       0.00      0.00      0.00       141
+    
+        accuracy                           0.21      4096
+       macro avg       0.03      0.10      0.04      4096
+    weighted avg       0.05      0.21      0.07      4096
