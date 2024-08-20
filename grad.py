@@ -1,17 +1,7 @@
 import gradio as st
-import argparse, json
-from test import main
+import argparse, json, joblib
+from test import main, Model
 
-
-def main_loop_strl(descri1, descri2, descri3, g_scale, thoigian, uploaded_file):
-    global outmp4list
-    descri = list()
-    for s in (descri1, descri2, descri3, ):
-        if s is not None: descri += [s]
-    for out___mp4_, audio_values, descri in main_loop(descri, g_scale, thoigian, "___", False, uploaded_file):
-        outmp4 = st.Audio(value=(sampling_rate, audio_values, ), label=descri, visible=True)
-        outmp4list.append(outmp4)
-    return outmp4list
 
 def showdata_col1():
     descri1 = st.Textbox(label="descri1")
@@ -36,6 +26,7 @@ def showdata_col3():
 outmp4list = list()
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    clf = joblib.load('C_1000__gamma_1__' + Model.NAME)
 
     parser.add_argument(
         '--listen',
@@ -54,7 +45,7 @@ if __name__ == '__main__':
     server_name = args.listen
 
     def foo(dir):
-        jso = main(dir)
+        jso = main(dir, clf=clf)
         return json.dumps(jso, sort_keys=True, indent=4)
 
     with st.Blocks() as demo:

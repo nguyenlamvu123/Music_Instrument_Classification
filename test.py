@@ -1,11 +1,32 @@
 import joblib, os, sklearn, librosa
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import numpy as np
 
 from feature_engineering import *
 from config import *
 
-def main(PATH=None) -> dict or None :
+
+def Evaluate_model(y_true, y_pred):
+    # site: https://machinelearningcoban.com/2017/08/31/evaluation/
+    labels = np.array(y_true)
+    print('test accuracy = ', accuracy_score(labels, y_pred), ' %')
+
+    print(classification_report(labels, y_pred))
+
+    cnf_matrix = confusion_matrix(labels, y_pred)
+    print('Confusion matrix:\n', cnf_matrix)
+    print('\nAccuracy:', np.diagonal(cnf_matrix).sum() / cnf_matrix.sum())
+
+
+def draw3Dplotfor3feat():
+    # https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html#sphx-glr-auto-examples-svm-plot-iris-svc-py
+    pass  # https://stackoverflow.com/questions/51495819/how-to-plot-svm-decision-boundary-in-sklearn-python
+
+
+@timer
+def main(PATH=None, testflag: bool = False, clf=None) -> dict or None :
     if PATH is None:  # run test
+        testflag = True
         PATH = librosa.util.find_files(Test_path.data_path)
     labels = []
     samples = []
@@ -15,17 +36,14 @@ def main(PATH=None) -> dict or None :
         samples.append(sample)
 
     data = np.array([extract_feature(sample) for sample in samples])
-
-    scaler = sklearn.preprocessing.MinMaxScaler(feature_range=(-1,1))
     data = scaler.fit_transform(data)
 
-    clf = joblib.load(Model.NAME)
+    if clf is None: clf = joblib.load('C_1000__gamma_1__' + Model.NAME)
     test_Y_hat = clf.predict(data)
 
     jso = None
-    if PATH is None:  # run test
-        accuracy = np.sum((test_Y_hat == labels)) / 200.0 * 100.0
-        print('test accuracy = ' + str(accuracy) + ' %')
+    if testflag:  # run test
+        Evaluate_model(labels, test_Y_hat)
     else:  # method is calles from gradio
         result = list(test_Y_hat)
         jso: dict or None = dict()
@@ -40,4 +58,5 @@ def main(PATH=None) -> dict or None :
 
 
 if __name__ == '__main__':
-    main()
+    PATH = librosa.util.find_files('./dataset/valid')
+    main(PATH, True)
