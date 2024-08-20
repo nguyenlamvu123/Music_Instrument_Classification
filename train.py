@@ -36,7 +36,7 @@ def main(audios_numpy, labels):
     n_samples = audios_numpy.shape[0]
     n_batches = n_samples // batch_size
 
-    linear_svm = define_model()
+    clf = define_model()
 
     for i in range(n_batches):
         print(f"{i + 1}/{n_batches}")
