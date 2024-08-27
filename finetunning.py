@@ -85,28 +85,28 @@ def run(clf):  # every_fragment_of_dataset_will_be_trained
 if __name__ == '__main__':
     for kw in (
             dict(
-                # C=1.0,  # 1.0  # SVC
-                n_estimators=None,  # 200  # GradientBoostingClassifier
-                criterion=None,  # "entropy",  # DecisionTreeClassifier
-                n_estimators_R=None,  # 100,  # RandomForestClassifier
+                # C=None,  # 1.0                       # SVC
+                n_estimators=None,  # 200
+                criterion=None,  # "entropy"
+                n_estimators_R=None,  # 100
             ),
             dict(
-                C=None,  # 1.0  # SVC
-                # n_estimators=200,  # 200  # GradientBoostingClassifier
-                criterion=None,  # "entropy",  # DecisionTreeClassifier
-                n_estimators_R=None,  # 100,  # RandomForestClassifier
+                C=None,  # 1.0
+                # n_estimators=None,  # 200            # GradientBoostingClassifier
+                criterion=None,  # "entropy"
+                n_estimators_R=None,  # 100
             ),
             dict(
-                C=None,  # 1.0  # SVC
-                n_estimators=None,  # 200  # GradientBoostingClassifier
-                # criterion="entropy",  # "entropy",  # DecisionTreeClassifier
-                n_estimators_R=None,  # 100,  # RandomForestClassifier
+                C=None,  # 1.0
+                n_estimators=None,  # 200
+                # criterion=None,  # "entropy",  # DecisionTreeClassifier
+                n_estimators_R=None,  # 100
             ),
             dict(
-                C=None,  # 1.0  # SVC
-                n_estimators=None,  # 200  # GradientBoostingClassifier
-                criterion=None,  # "entropy",  # DecisionTreeClassifier
-                # n_estimators_R=100,  # 100,  # RandomForestClassifier
+                C=None,  # 1.0
+                n_estimators=None,  # 200
+                criterion=None,  # "entropy"
+                # n_estimators_R=None,  # 100,         # RandomForestClassifier
             ),
     ):
         run_(**kw)

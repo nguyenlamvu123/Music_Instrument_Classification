@@ -9,6 +9,7 @@ batch_size: int = 100000
 makecsvofdataset: bool = False  # True
 root_dir = os.listdir(os.path.dirname(__file__))
 mod_name: tuple = ("SVC", "GradientBoostingClassifier", "DecisionTreeClassifier", "RandomForestClassifier")
+    # tuple danh sách tên các model
 
 
 class CreateDataset:

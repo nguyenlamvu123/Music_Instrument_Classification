@@ -24,7 +24,7 @@ def draw3Dplotfor3feat():
 
 
 @timer
-def main(PATH=None, testflag: bool = False, clf=None) -> dict or None :
+def main(PATH=None, testflag: bool = False, clf=None, jso: dict or None = None) -> dict or None :
     if PATH is None:  # run test
         testflag = True
         PATH = librosa.util.find_files(Test_path.data_path)
@@ -43,19 +43,18 @@ def main(PATH=None, testflag: bool = False, clf=None) -> dict or None :
     if clf is None: clf = joblib.load(Model.NAME)
     test_Y_hat = clf.predict(data)
 
-    jso = None
     if testflag:  # run test
         Evaluate_model(labels, test_Y_hat)
     else:  # method is calles from gradio
         result = list(test_Y_hat)
-        jso: dict or None = dict()
-        assert len(result) == len(PATH)
-        res_set: set = set(result)
-        for key in res_set:
-            jso[key] = list()
-            for i in range(len(result)):
-                if result[i] == key:
-                    jso[key].append(PATH[i].split(os.sep)[-1])
+        assert jso is not None
+        assert len(result) == len(PATH) == len(labels)
+        for i in range(len(labels)):
+            key = labels[i]
+            if key not in jso:
+                jso[key] = list()
+            if result[i] not in jso[key]:
+                jso[key].append(result[i])
     return jso
 
 

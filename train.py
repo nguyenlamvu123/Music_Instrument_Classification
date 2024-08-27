@@ -74,22 +74,22 @@ def runfntg(func):  # @runfntg
     @wraps(func)
     def wrapper(
             C: float or None = 1.0, gamma=0.02, degree=3, coef0=0.0,  # SVC
-            n_estimators: int or None = 200, random_state=0, max_depth=2,  # GradientBoostingClassifier
+            n_estimators: int or None = 200, random_state=0, max_depth=50,  # GradientBoostingClassifier
             criterion: str or None = "entropy",  # DecisionTreeClassifier
             n_estimators_R: int or None = 100,  # RandomForestClassifier
     ):
         modelname = f'{os.path.splitext(Model.NAME)[0]}__'
         if C is not None:
-            kw = dict(C=C, gamma=gamma, degree=degree, coef0=coef0)  # SVC
+            kw = dict(C=C, gamma=gamma, degree=degree, coef0=coef0)                                                     # SVC
             modelname += f'SVC__{C}__{gamma}{os.path.splitext(Model.NAME)[-1]}'
         elif n_estimators is not None:
-            kw = dict(n_estimators=n_estimators, random_state=random_state, max_depth=max_depth)  # GradientBoostingClassifier
+            kw = dict(n_estimators=n_estimators, random_state=random_state, max_depth=max_depth)                        # GradientBoostingClassifier
             modelname += f'GradientBoostingClassifier__{n_estimators}__{random_state}{os.path.splitext(Model.NAME)[-1]}'
         elif criterion is not None:
-            kw = dict(criterion=criterion)  # DecisionTreeClassifier
+            kw = dict(criterion=criterion)                                                                              # DecisionTreeClassifier
             modelname += f'DecisionTreeClassifier__{criterion}{os.path.splitext(Model.NAME)[-1]}'
         elif n_estimators_R is not None:
-            kw = dict(n_estimators_R=n_estimators_R, random_state=random_state, max_depth=max_depth)  # RandomForestClassifier
+            kw = dict(n_estimators_R=n_estimators_R, random_state=random_state, max_depth=max_depth, warm_start=True)   # RandomForestClassifier
             modelname += f'RandomForestClassifier__{n_estimators_R}__{random_state}{os.path.splitext(Model.NAME)[-1]}'
         else:
             raise
